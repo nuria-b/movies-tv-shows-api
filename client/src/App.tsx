@@ -1,21 +1,22 @@
 import React from "react";
 import "./index.css";
-import Home from "./components/home/Home";
+//import Home from "./components/home/Home";
 import Header from "./components/header/Header";
 import Movies from "./components/films/Movies";
 import TvShows from "./components/films/TvShows";
 import MoviesDetails from "./components/details/MoviesDetails";
 import TvShowsDetails from "./components/details/TvShowsDetails";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import InnerContent from "./components/InnerContent";
 
 export default function App() {
   return (
     <div className="App">
       <Header />
+      {/*<Home/>*/}
       <Routes>
         <Route path="/" element={<InnerContent />}>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Navigate replace to="movies" />} />
           <Route path="/movies" element={<Movies />} />
           <Route path="/tvshows" element={<TvShows />} />
           <Route>
