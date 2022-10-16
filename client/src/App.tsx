@@ -7,18 +7,22 @@ import TvShows from "./components/films/TvShows";
 import MoviesDetails from "./components/details/MoviesDetails";
 import TvShowsDetails from "./components/details/TvShowsDetails";
 import { Routes, Route } from "react-router-dom";
+import InnerContent from "./components/InnerContent";
 
 export default function App() {
-
-  return  (
+  return (
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/movies" element={<Movies />} />
-        <Route path="/tvshows" element={<TvShows />} />
-        <Route path="/movies/:id" element={<MoviesDetails />} />
-        <Route path="/tvshows/:id" element={<TvShowsDetails />} />
+        <Route path="/" element={<InnerContent />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/tvshows" element={<TvShows />} />
+          <Route>
+            <Route path="/movies/:id" element={<MoviesDetails />} />
+            <Route path="/tvshows/:id" element={<TvShowsDetails />} />
+          </Route>
+        </Route>
       </Routes>
     </div>
   );
