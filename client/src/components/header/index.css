@@ -1,0 +1,38 @@
+nav > ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  li p {
+    color: #008cba;
+  }
+  
+  button {
+    border: none;
+    color: white;
+    padding: 2px 20px;
+    text-align: center;
+    font-size: 14px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border: 2px solid #008cba;
+  }
+  
+  button:hover {
+    background-color: #008cba;
+    color: white;
+  }
+  
+  .menu:hover {
+    color: white;
+  }
+  
