@@ -33,5 +33,5 @@
 ### ✒️ Autoría
 
 <ul> 
-    <li><a href="https://github.com/nuria-b">Nuria</a></li> 
+    <li><a href="https://github.com/nuria-b">Nuria B</a></li> 
 </ul> 
