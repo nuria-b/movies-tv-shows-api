@@ -1,5 +1,5 @@
 import React from "react";
-import "./index.css";
+import "./style.css";
 //import Home from "./components/home/Home";
 import Header from "./components/header/Header";
 import Movies from "./components/films/Movies";

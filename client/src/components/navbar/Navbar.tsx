@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Movies from "../films/Movies";
 import TvShows from "../films/TvShows";
-import style from "./style.css";
+import "./style.css";
 
 function Navbar() {
   return (
