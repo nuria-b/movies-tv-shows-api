@@ -20,10 +20,14 @@ function MoviesDetails() {
       })
   }, [])
 
+  //const findMovies = oneMovie.filter(movies => movies.title === id);
+
+  if (loading) return <section>Cargando...</section>
+
   return  (
-    <div className="MoviesDetails">
+    <section className="MoviesDetails">
         <h1>I'm the MoviesDetails</h1>
-    </div>
+    </section>
   );
 }
 
