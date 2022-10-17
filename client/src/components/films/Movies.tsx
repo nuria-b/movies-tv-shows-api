@@ -3,13 +3,13 @@ import { useEffect, createContext, useState } from "react";
 import { Link } from "react-router-dom";
 
 
-// Crear context de Movies y Tv shows
+// Crear context de Movies
 export const MoviesContext = createContext(Movies);
 
 export default function Movies() {
   const [moviesList, setMoviesList] = useState([]);
 
-  // Fetch para recoger las películas populares de la api
+  // Recoger las películas de la api
   const fetchMoviesList = async (res:any) => {
     const response = await fetch(
       `https://api.themoviedb.org/3/movie/popular?api_key=${
@@ -17,7 +17,7 @@ export default function Movies() {
       }&language=en-US&page=1`
     );
     const movies = await response.json();
-    setMoviesList(movies.results); //para que muestre las películas populares de la api
+    setMoviesList(movies.results); //para que las muestre
     };
 
     useEffect(() => {
@@ -31,7 +31,7 @@ export default function Movies() {
 
   return (
     <MoviesContext.Provider value={value}>
-      <section>{moviesList.map(({movie, i}:any) => (
+      <section>{moviesList.map((movie:any, i:any) => (
         <section className="movies" key={i}>
           <Link to="/movies/detail/:id">
             <img
