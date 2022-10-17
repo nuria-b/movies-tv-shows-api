@@ -3,8 +3,9 @@ import "./style.css";
 function Home() {
 
   return  (
-    <div className="Home">
-        <h1>I'm the Home</h1>
+    <div className="home">
+      <h1 className="home-text">I'm the Home</h1>
+
     </div>
   );
 }
