@@ -1,5 +1,7 @@
 import "./style.css";
 import { useEffect, createContext, useState } from "react";
+import { Link } from "react-router-dom";
+
 
 // Crear context de Movies y Tv shows
 export const MoviesContext = createContext(Movies);
@@ -26,12 +28,19 @@ export default function Movies() {
       moviesList,
       setMoviesList,
     };
-  
+
   return (
     <MoviesContext.Provider value={value}>
-      <section>{moviesList.map((movie, i) => (
-        <section className="Movies">
-          <h1>I'm the Movies</h1>
+      <section>{moviesList.map(({movie, i}:any) => (
+        <section className="movies" key={i}>
+          <Link to="/movies/detail/:id">
+            <img
+              src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+              alt={movie.title}
+            />
+            <h2>{movie.title}</h2>
+            <h3>Ranking: {movie.vote_average}</h3>
+          </Link>
         </section>
       ))}
         
