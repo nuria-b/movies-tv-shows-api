@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import Home from "./components/home/Home";
+//import Home from "./components/home/Home";
 import Header from "./components/header/Header";
 import Movies from "./components/films/Movies";
 import TvShows from "./components/films/TvShows";
@@ -15,7 +15,7 @@ export default function App() {
       <Header />
       <Routes>
         <Route path="/" element={<InnerContent />}>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Navigate replace to="movies" />} />
           <Route path="/movies" element={<Movies />} />
           <Route path="/tvshows" element={<TvShows />} />
           <Route>

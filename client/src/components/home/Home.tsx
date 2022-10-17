@@ -2,7 +2,6 @@ import "./style.css";
 import dataMovies from "../movies.json";
 import dataTvShows from "../tvshows.json";
 
-
 function Home() {
   return (
     <div className="home">
