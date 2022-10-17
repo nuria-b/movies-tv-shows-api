@@ -2,7 +2,7 @@ import "./style.css";
 import { useEffect, createContext, useState } from "react";
 
 // Crear context de Movies y Tv shows
-export const FilmsContext = createContext(Movies);
+export const MoviesContext = createContext(Movies);
 
 export default function Movies() {
   const [moviesList, setMoviesList] = useState([]);
@@ -22,17 +22,17 @@ export default function Movies() {
       fetchMoviesList(Movies);
     }, []);
 
-    const value = {
+    const value:any = {
       moviesList,
       setMoviesList,
     };
   
-  return  (
-    <FilmsContext.Provider value={value}>
+  return (
+    <MoviesContext.Provider value={value}>
       <section className="Movies">
           <h1>I'm the Movies</h1>
       </section>
-    </FilmsContext.Provider>
+    </MoviesContext.Provider>
   );
 }
 
