@@ -33,8 +33,15 @@ function TvShows() {
       <section className="films-container" >
       {TvShowsList.map((tv:any, i:any) => (
         <section className="films-card" key={tv.id}>
-            <h1>I'm the TvShows</h1>
-            </section>
+            <Link to="/tvshows/detail/:id">
+              <img
+                src={`https://image.tmdb.org/t/p/w500${tv.backdrop_path}`}
+                alt={tv.name}
+              />
+              <h2>{tv.name}</h2>
+              <h3>Ranking: {tv.vote_average}</h3>
+            </Link>
+        </section>
       ))}
         
       </section>
