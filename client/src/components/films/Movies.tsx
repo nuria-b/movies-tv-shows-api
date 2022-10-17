@@ -28,9 +28,11 @@ export default function Movies() {
     };
   
   return  (
-    <div className="Movies">
-        <h1>I'm the Movies</h1>
-    </div>
+    <FilmsContext.Provider value={value}>
+      <section className="Movies">
+          <h1>I'm the Movies</h1>
+      </section>
+    </FilmsContext.Provider>
   );
 }
 
