@@ -9,7 +9,7 @@ export const MoviesContext = createContext(Movies);
 export default function Movies() {
   const [moviesList, setMoviesList] = useState([]);
 
-  // Recoger las películas de la api
+  // Recoger las movies de la api
   const fetchMoviesList = async (res:any) => {
     const response = await fetch(
       `https://api.themoviedb.org/3/movie/popular?api_key=${
@@ -17,7 +17,7 @@ export default function Movies() {
       }&language=en-US&page=1`
     );
     const movies = await response.json();
-    setMoviesList(movies.results); //para que las muestre
+    setMoviesList(movies.results); //mostras las movies
     };
 
     useEffect(() => {
