@@ -30,8 +30,13 @@ function TvShows() {
 
   return  (
     <TvShowsContext.Provider value={value}>
-      <section className="TvShows">
-          <h1>I'm the TvShows</h1>
+      <section className="films-container" >
+      {TvShowsList.map((tv:any, i:any) => (
+        <section className="TvShows">
+            <h1>I'm the TvShows</h1>
+            </section>
+      ))}
+        
       </section>
     </TvShowsContext.Provider>
   );
