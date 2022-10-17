@@ -29,8 +29,12 @@ export default function Movies() {
   
   return (
     <MoviesContext.Provider value={value}>
-      <section className="Movies">
+      <section>{moviesList.map((movie, i) => (
+        <section className="Movies">
           <h1>I'm the Movies</h1>
+        </section>
+      ))}
+        
       </section>
     </MoviesContext.Provider>
   );
