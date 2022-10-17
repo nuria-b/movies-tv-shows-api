@@ -29,9 +29,11 @@ function TvShows() {
   };
 
   return  (
-    <div className="TvShows">
-        <h1>I'm the TvShows</h1>
-    </div>
+    <TvShowsContext.Provider value={value}>
+      <section className="TvShows">
+          <h1>I'm the TvShows</h1>
+      </section>
+    </TvShowsContext.Provider>
   );
 }
 
