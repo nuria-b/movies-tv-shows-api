@@ -32,7 +32,7 @@ function TvShows() {
     <TvShowsContext.Provider value={value}>
       <section className="films-container" >
       {TvShowsList.map((tv:any, i:any) => (
-        <section className="TvShows">
+        <section className="films-card" key={tv.id}>
             <h1>I'm the TvShows</h1>
             </section>
       ))}
