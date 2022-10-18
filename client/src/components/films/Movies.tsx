@@ -33,7 +33,7 @@ export default function Movies() {
     <MoviesContext.Provider value={value}>
       <section className="films-container" >{moviesList.map((movie:any, i:any) => (
         <section className="films-card" key={i}>
-          <Link to="/movies/detail/:id">
+          <Link to={`/movies/${movie.id}`}>
             <img
               src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
               alt={movie.title}
