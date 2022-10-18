@@ -8,18 +8,18 @@ function Navbar() {
     <nav>
       <ul>
         <li>
-          <button>
-            <Link className="Nav-active" to="/movies">
-              <p className="menu">Movies</p>
-            </Link>
-          </button>
+          <Link className="Nav-active" to="/movies">
+            <button>
+              <p className="menu-text">Movies</p>
+            </button>
+          </Link>
         </li>
         <li>
-          <button>
-            <Link className="Nav-active" to="/tvshows">
-              <p className="menu">TV Shows</p>
-            </Link>
-          </button>
+          <Link className="Nav-active" to="/tvshows">
+            <button>
+              <p className="menu-text">TV Shows</p>
+            </button>
+          </Link>
         </li>
       </ul>
     </nav>
