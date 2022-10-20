@@ -19,8 +19,8 @@ export default function App() {
           <Route path="/movies" element={<Movies />} />
           <Route path="/tvshows" element={<TvShows />} />
           <Route>
-            <Route path="/movies/{movie_id}" element={<MoviesDetails />} />
-            <Route path="/tvshows/{tv_id}" element={<TvShowsDetails />} />
+            <Route path="/movies/:id" element={<MoviesDetails />} />
+            <Route path="/tvshows/:id" element={<TvShowsDetails />} />
           </Route>
         </Route>
       </Routes>
