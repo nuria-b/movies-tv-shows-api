@@ -32,7 +32,15 @@ function MoviesDetails() {
         src={`https://image.tmdb.org/t/p/w500${oneMovie.backdrop_path}`}
         alt={oneMovie.title}
       />
-      <p>Genres:</p>
+      <p>Genres:
+        {/*{oneMovie.genres &&
+          oneMovie.genres.slice(0, 5).map((genre:any, i:any) => (
+            <span key={i} className="genres__item">
+              {genre.name}
+            </span>
+          ))
+        }*/}
+      </p>
       <p>Release date: {oneMovie.release_date}</p>
       <p>Duration (mins): {oneMovie.runtime}</p>
       <p>Overview: {oneMovie.overview}</p>
