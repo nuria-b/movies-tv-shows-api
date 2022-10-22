@@ -62,14 +62,13 @@ function MoviesDetails() {
   };
 
   // https://api.themoviedb.org/3/movie/{movie_id}/similar?api_key=${import.meta.env.VITE_API_KEY}&language=en-US&page=1
-  //id de prueba: 616820
-
-  // Recoger las movies relacionadas de la api v1 ---> falta cambiar 616820 por el id de la movie
-  useEffect(() => {
+  
+  // Recoger las movies relacionadas de la api v1 ---> falta cambiar 616820 por el id de la movie -> ${oneMovie.id} ?
+   useEffect(() => {
     setLoading(true);
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/${oneMovie.id}/similar?api_key=${import.meta.env.VITE_API_KEY}&language=en-US&page=1`
+        `https://api.themoviedb.org/3/movie/616820/similar?api_key=${import.meta.env.VITE_API_KEY}&language=en-US&page=1`
       )
       .then((res: any) => {
         //console.log(res.data.results[id])
@@ -129,9 +128,11 @@ function MoviesDetails() {
       <p>Vote count: {oneMovie.vote_count}</p>
       <section>
         <p>Related movies:{relatedMovies.original_title}</p>
-        {/*{relatedMovies.map((related: any, i: any) => (
-          <p key={i}>Related movies: {related.original_title}</p>
-        ))}*/}
+        {/*<div>
+          {relatedMovies.map((related: any, i: any) => (
+            <p key={i}>Related movies: {related.original_title}</p>
+          ))}
+        </div>*/}
       </section>
     </section>
   );
