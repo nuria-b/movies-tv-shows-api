@@ -5,10 +5,10 @@ import axios from "axios";
 
 function Genres(props:any) {
 
-  //    const [genresList, setGenresList] = useState([]);
+  //const [genresList, setGenresList] = useState([]);
 
-  // Recoger las movies de la api
-  /*    
+  // Recoger los genres de la api
+  /*   
     const fetchGenresList = async (res: any) => {
       const response = await fetch(
         `https://api.themoviedb.org/3/genre/movie/list?api_key=${import.meta.env.VITE_API_KEY}&language=en-US`

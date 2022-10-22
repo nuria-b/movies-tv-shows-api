@@ -12,6 +12,7 @@ function MoviesDetails() {
   const [oneMovie, setOneMovie] = useState([id]);
   const [loading, setLoading] = useState(false);
   const [genresList, setGenresList] = useState([]);
+  const [relatedMovies, setRelatedMovies] = useState([id]);
 
   useEffect(() => {
     setLoading(true);
@@ -24,13 +25,27 @@ function MoviesDetails() {
       .then((res: any) => {
         //console.log(res.data.results[id])
         setOneMovie(res.data.results[id]);
-        //setGenresList(res.data.results[id]);
         setLoading(false);
       }
     );
   }, []);
 
-  
+  // https://api.themoviedb.org/3/movie/{movie_id}/similar?api_key=${import.meta.env.VITE_API_KEY}&language=en-US&page=1
+
+  // Recoger las movies relacionadas de la api v1
+  useEffect(() => {
+    setLoading(true);
+    axios
+      .get(
+        `https://api.themoviedb.org/3/movie/616820/similar?api_key=${import.meta.env.VITE_API_KEY}&language=en-US&page=1`
+      )
+      .then((res: any) => {
+        //console.log(res.data.results[id])
+        setRelatedMovies(res.data.results[id]);
+        setLoading(false);
+      }
+    );
+  }, []);
 
   // Recoger los genres de la api v2
   /*
@@ -110,7 +125,12 @@ function MoviesDetails() {
       <p>Overview: {oneMovie.overview}</p>
       <p>Vote average: {oneMovie.vote_average}</p>
       <p>Vote count: {oneMovie.vote_count}</p>
-      <section>Related movies:</section>
+      <section>
+        <p>Related movies:{relatedMovies.original_title}</p>
+        {/*{relatedMovies.map((related: any, i: any) => (
+          <p key={i}>Related movies: {related.original_title}</p>
+        ))}*/}
+      </section>
     </section>
   );
 }
