@@ -28,7 +28,7 @@ function MoviesDetails() {
 
   
 
-  // Recoger los genres de la api
+  // Recoger los genres de la api v2
   const { genres=[], }:any = oneMovie;
   
   genres.forEach((genre:any) => {
@@ -38,6 +38,7 @@ function MoviesDetails() {
     }
   });
 
+  // Recoger los genres de la api v1
   /*const fetchGenresList = async (res: any) => {
     const response = await fetch(
       `https://api.themoviedb.org/3/genre/movie/list?api_key=${import.meta.env.VITE_API_KEY}&language=en-US`
