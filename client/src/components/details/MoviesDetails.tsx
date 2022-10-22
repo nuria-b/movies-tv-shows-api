@@ -1,8 +1,11 @@
 import "./style.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, createContext } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import Genres from "./Genres";
+//import Genres from "./Genres";
+
+// Crear context de genres
+export const GenresContext = createContext(MoviesDetails);
 
 function MoviesDetails() {
   const { id }: any = useParams();
@@ -23,43 +26,44 @@ function MoviesDetails() {
         setOneMovie(res.data.results[id]);
         //setGenresList(res.data.results[id]);
         setLoading(false);
-      });
+      }
+    );
   }, []);
 
   
 
   // Recoger los genres de la api v2
-  const { genres=[], }:any = oneMovie;
+  /*
+  const { genres=[] }:any = oneMovie;
   
   genres.forEach((genre:any) => {
-    if (genre.name === true) {
+    if (genre.id === true) {
       //return genre.name;
       console.log(genre.name);
     }
   });
+  */
 
   // Recoger los genres de la api v1
-  /*const fetchGenresList = async (res: any) => {
+  /*
+  const fetchGenresList = async (res: any) => {
     const response = await fetch(
       `https://api.themoviedb.org/3/genre/movie/list?api_key=${import.meta.env.VITE_API_KEY}&language=en-US`
     );
     const genres = await response.json();
-    setGenresList(res.data.results); //mostrar los genres
+    setGenresList(genres.results); //mostrar los genres
   };
 
   useEffect(() => {
-    fetchGenresList(Genres);
+    fetchGenresList(genresList);
   }, []);
-  
+  */
   const value: any = {
     genresList,
     setGenresList,
   };
-*/
-  
 
-
-  // haciendo prueba para recoger info de genres
+  // prueba para recoger info de genres
   const dataGenres = [
     { id: 28, name: "Action" },
     { id: 12, name: "Adventure" },
@@ -85,17 +89,22 @@ function MoviesDetails() {
   if (loading) return <section>Cargando...</section>;
 
   return (
+    
     <section className="FilmsDetails">
       <h1>Title: {oneMovie.title}</h1>
       <img
         src={`https://image.tmdb.org/t/p/w500${oneMovie.backdrop_path}`}
         alt={oneMovie.title}
       />
+      {/*}
+      <GenresContext.Provider value={value}>
       <div>
         {genresList.slice(0, 4).map((genres: any, i: any) => (
-          <p key={i}>{genres}</p>
+          <p key={i}>{oneMovie.genre}</p>
         ))}
       </div>
+      </GenresContext.Provider>
+      */}
       <p>Release date: {oneMovie.release_date}</p>
       <p>Duration (mins): {oneMovie.runtime}</p>
       <p>Overview: {oneMovie.overview}</p>

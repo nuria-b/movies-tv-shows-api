@@ -7,6 +7,7 @@ export const MoviesContext = createContext(Movies);
 
 export default function Movies() {
   const [moviesList, setMoviesList] = useState([]);
+  
   // Recoger las movies de la api
   const fetchMoviesList = async (res: any) => {
     const response = await fetch(
