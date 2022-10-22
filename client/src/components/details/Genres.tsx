@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-function Genres(props) {
+function Genres(props:any) {
 
   //    const [genresList, setGenresList] = useState([]);
 
@@ -27,7 +27,7 @@ function Genres(props) {
     };
     */
   return (
-    <p>{props.genre.name}</p>
+    <p>{props.genres.name}</p>
   );
 }
 export default Genres;

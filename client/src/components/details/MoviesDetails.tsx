@@ -8,7 +8,7 @@ function MoviesDetails() {
   const { id }: any = useParams();
   const [oneMovie, setOneMovie] = useState([id]);
   const [loading, setLoading] = useState(false);
-  //const [genresList, setGenresList] = useState([]);
+  const [genresList, setGenresList] = useState([]);
 
   useEffect(() => {
     setLoading(true);
@@ -26,14 +26,24 @@ function MoviesDetails() {
       });
   }, []);
 
-  // Recoger las movies de la api
-/*  
-  const fetchGenresList = async (res: any) => {
+  
+
+  // Recoger los genres de la api
+  const { genres=[], }:any = oneMovie;
+  
+  genres.forEach((genre:any) => {
+    if (genre.name === true) {
+      //return genre.name;
+      console.log(genre.name);
+    }
+  });
+
+  /*const fetchGenresList = async (res: any) => {
     const response = await fetch(
       `https://api.themoviedb.org/3/genre/movie/list?api_key=${import.meta.env.VITE_API_KEY}&language=en-US`
     );
     const genres = await response.json();
-    setGenresList(genres.results); //mostrar los genres
+    setGenresList(res.data.results); //mostrar los genres
   };
 
   useEffect(() => {
@@ -44,7 +54,9 @@ function MoviesDetails() {
     genresList,
     setGenresList,
   };
-  */
+*/
+  
+
 
   // haciendo prueba para recoger info de genres
   const dataGenres = [
@@ -78,9 +90,10 @@ function MoviesDetails() {
         src={`https://image.tmdb.org/t/p/w500${oneMovie.backdrop_path}`}
         alt={oneMovie.title}
       />
-      <div>{dataGenres.map((g)=>{
-	        return <Genres genre={g}/>
-        })}
+      <div>
+        {genresList.slice(0, 4).map((genres: any, i: any) => (
+          <p key={i}>{genres}</p>
+        ))}
       </div>
       <p>Release date: {oneMovie.release_date}</p>
       <p>Duration (mins): {oneMovie.runtime}</p>
