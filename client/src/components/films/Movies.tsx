@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 // Crear context de Movies
 export const MoviesContext = createContext(Movies);
+
 export default function Movies() {
   const [moviesList, setMoviesList] = useState([]);
   // Recoger las movies de la api
@@ -14,15 +15,18 @@ export default function Movies() {
       }&language=en-US&page=1`
     );
     const movies = await response.json();
-    setMoviesList(movies.results); //mostras las movies
+    setMoviesList(movies.results); //mostrar las movies
   };
+
   useEffect(() => {
     fetchMoviesList(Movies);
   }, []);
+  
   const value: any = {
     moviesList,
     setMoviesList,
   };
+
   return (
     <MoviesContext.Provider value={value}>
       <section className="films-container">
