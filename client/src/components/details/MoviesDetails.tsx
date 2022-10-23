@@ -453,7 +453,8 @@ function MoviesDetails() {
       <p>Overview: {oneMovie.overview}</p>
       <p>Vote average: {oneMovie.vote_average}</p>
       <p>Vote count: {oneMovie.vote_count}</p>
-      <section>
+      <section className="related-container">
+        <p>Related movies: </p>
         {
           dataRelated.slice(0, 4).map((related:any, i:any) =>(
             <section key={i}>
