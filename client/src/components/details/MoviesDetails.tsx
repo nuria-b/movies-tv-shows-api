@@ -5,7 +5,7 @@ import axios from "axios";
 //import Genres from "./Genres";
 
 // Crear context de genres
-export const GenresContext = createContext(MoviesDetails);
+//export const GenresContext = createContext(MoviesDetails);
 
 function MoviesDetails() {
   const { id }: any = useParams();
@@ -63,12 +63,13 @@ function MoviesDetails() {
 
   // https://api.themoviedb.org/3/movie/{movie_id}/similar?api_key=${import.meta.env.VITE_API_KEY}&language=en-US&page=1
   
-  // Recoger las movies relacionadas de la api v1 ---> falta cambiar 616820 por el id de la movie -> ${oneMovie.id} ?
+  // Recoger las movies relacionadas de la api v1 ---> falta cambiar 436270 por el id de la movie -> ${oneMovie.id} ??
+
    useEffect(() => {
     setLoading(true);
     axios
       .get(
-        `https://api.themoviedb.org/3/616820/616820/similar?api_key=${import.meta.env.VITE_API_KEY}&language=en-US&page=1`
+        `https://api.themoviedb.org/3/movie/436270/similar?api_key=${import.meta.env.VITE_API_KEY}&language=en-US&page=1`
       )
       .then((res: any) => {
         //console.log(res.data.results[id])
@@ -79,6 +80,7 @@ function MoviesDetails() {
   }, []);
 
   // prueba para recoger info de genres
+  /*
   const dataGenres = [
     { id: 28, name: "Action" },
     { id: 12, name: "Adventure" },
@@ -100,6 +102,7 @@ function MoviesDetails() {
     { id: 10752, name: "War" },
     { id: 37, name: "Western" },
   ];
+  */
 
   if (loading) return <section>Cargando...</section>;
 
@@ -127,7 +130,7 @@ function MoviesDetails() {
       <p>Vote average: {oneMovie.vote_average}</p>
       <p>Vote count: {oneMovie.vote_count}</p>
       <section>
-        <p>Related movies:{relatedMovies.original_title}</p>
+        <p>Related movies:{relatedMovies.title}</p>
         {/*<div>
           {relatedMovies.map((related: any, i: any) => (
             <p key={i}>Related movies: {related.original_title}</p>
