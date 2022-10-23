@@ -461,9 +461,6 @@ function MoviesDetails() {
             </section>
           ))
         }
-        {/*
-        <p>Related movies:{relatedMovies.title}</p>
-        */}
       </section>
     </section>
   );
