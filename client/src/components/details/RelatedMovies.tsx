@@ -1,7 +1,10 @@
 import "./style.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, createContext } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+
+// Crear context de related movies
+export const GenresContext = createContext(RelatedMovies);
 
 function RelatedMovies() {
   const { id }: any = useParams();
@@ -26,6 +29,11 @@ function RelatedMovies() {
         setLoading(false);
       });
   }, []);
+
+  const value: any = {
+    relatedMovies,
+    setRelatedMovies,
+  };
 
   // prueba para recoger info de related movies
   const dataRelated: any = [
@@ -374,7 +382,7 @@ function RelatedMovies() {
   if (loading) return <section>Cargando...</section>;
 
   return (
-
+    <GenresContext.Provider value={value}>
       <section className="related-container">
         <p className="related-title">Related movies: </p>
         {dataRelated.slice(0, 4).map((related: any, i: any) => (
@@ -384,7 +392,7 @@ function RelatedMovies() {
           </section>
         ))}
       </section>
-
+    </GenresContext.Provider>
   );
 }
 export default RelatedMovies;
