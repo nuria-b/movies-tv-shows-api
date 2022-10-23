@@ -455,10 +455,10 @@ function MoviesDetails() {
       <p>Id: {oneMovie.id}</p>
       <section className="detail-container">
         <div className="detail-subcontainer">
-          <h1>Title: {oneMovie.title}</h1>
+          <h1 className="detail-title">Title: {oneMovie.title}</h1>
           <img
           src={`https://image.tmdb.org/t/p/w500${oneMovie.backdrop_path}`}
-          alt={oneMovie.title}
+          alt={oneMovie.title}  className="detail-image"
           />
         </div>
         <div className="detail-subcontainer">
@@ -473,19 +473,19 @@ function MoviesDetails() {
           */}
         </div>
         <div className="detail-subcontainer">
-          <p>Release date: {oneMovie.release_date}</p>
-          <p>Duration (mins): {oneMovie.runtime}</p>
-          <p>Overview: {oneMovie.overview}</p>
-          <p>Vote average: {oneMovie.vote_average}</p>
-          <p>Vote count: {oneMovie.vote_count}</p>
+          <p className="detail-info">Release date: {oneMovie.release_date}</p>
+          <p className="detail-info">Duration (mins): {oneMovie.runtime}</p>
+          <p className="detail-info">Overview: {oneMovie.overview}</p>
+          <p className="detail-info">Vote average: {oneMovie.vote_average}</p>
+          <p className="detail-info">Vote count: {oneMovie.vote_count}</p>
         </div>
       </section>
 
       <section className="related-container">
-        <p>Related movies: </p>
+        <p className="related-title">Related movies: </p>
         {dataRelated.slice(0, 4).map((related: any, i: any) => (
-          <section key={i}>
-            <p>{related.title}</p>
+          <section key={i} className="related-subcontainer">
+            <p className="related-info">{related.title}</p>
           </section>
         ))}
       </section>
