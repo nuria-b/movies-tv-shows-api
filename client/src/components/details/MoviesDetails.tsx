@@ -486,6 +486,7 @@ function MoviesDetails() {
         {dataRelated.slice(0, 4).map((related: any, i: any) => (
           <section key={i} className="related-subcontainer">
             <p className="related-info">{related.title}</p>
+            <img className="related-image"></img>
           </section>
         ))}
       </section>
