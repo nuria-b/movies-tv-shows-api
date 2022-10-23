@@ -451,18 +451,17 @@ function MoviesDetails() {
   if (loading) return <section>Cargando...</section>;
 
   return (
-    <section className="FilmsDetails">
-      <h1>Id: {oneMovie.id}</h1>
-      <section>
-        <div>
+    <section className="details-background">
+      <p>Id: {oneMovie.id}</p>
+      <section className="detail-container">
+        <div className="detail-subcontainer">
           <h1>Title: {oneMovie.title}</h1>
           <img
           src={`https://image.tmdb.org/t/p/w500${oneMovie.backdrop_path}`}
           alt={oneMovie.title}
           />
         </div>
-
-        <div>
+        <div className="detail-subcontainer">
           {/*}
             <GenresContext.Provider value={value}>
             <div>
@@ -473,15 +472,14 @@ function MoviesDetails() {
             </GenresContext.Provider>
           */}
         </div>
+        <div className="detail-subcontainer">
+          <p>Release date: {oneMovie.release_date}</p>
+          <p>Duration (mins): {oneMovie.runtime}</p>
+          <p>Overview: {oneMovie.overview}</p>
+          <p>Vote average: {oneMovie.vote_average}</p>
+          <p>Vote count: {oneMovie.vote_count}</p>
+        </div>
       </section>
-      
-      <div>
-        <p>Release date: {oneMovie.release_date}</p>
-        <p>Duration (mins): {oneMovie.runtime}</p>
-        <p>Overview: {oneMovie.overview}</p>
-        <p>Vote average: {oneMovie.vote_average}</p>
-        <p>Vote count: {oneMovie.vote_count}</p>
-      </div>
 
       <section className="related-container">
         <p>Related movies: </p>
