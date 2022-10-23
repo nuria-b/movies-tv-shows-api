@@ -5,8 +5,8 @@ import axios from "axios";
 
 function TvShowsDetails() {
   const { id }: any = useParams();
-  const [oneTv, setOneTv] = useState([id]);
-  const [loading, setLoading] = useState(false);
+  const [oneTv, setOneTv]: any = useState([id]);
+  const [loading, setLoading]: any = useState(false);
 
   useEffect(() => {
     setLoading(true);

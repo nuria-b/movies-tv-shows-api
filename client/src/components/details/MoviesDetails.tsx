@@ -9,10 +9,10 @@ export const GenresContext = createContext(MoviesDetails);
 
 function MoviesDetails() {
   const { id }: any = useParams();
-  const [oneMovie, setOneMovie] = useState([id]);
-  const [loading, setLoading] = useState(false);
-  const [genresList, setGenresList] = useState([]);
-  const [relatedMovies, setRelatedMovies] = useState([id]);
+  const [oneMovie, setOneMovie]: any = useState([id]);
+  const [loading, setLoading]: any = useState(false);
+  const [genresList, setGenresList]: any = useState([]);
+  const [relatedMovies, setRelatedMovies]: any = useState([id]);
 
   useEffect(() => {
     setLoading(true);
@@ -68,7 +68,7 @@ function MoviesDetails() {
     setLoading(true);
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/616820/similar?api_key=${import.meta.env.VITE_API_KEY}&language=en-US&page=1`
+        `https://api.themoviedb.org/3/616820/616820/similar?api_key=${import.meta.env.VITE_API_KEY}&language=en-US&page=1`
       )
       .then((res: any) => {
         //console.log(res.data.results[id])
