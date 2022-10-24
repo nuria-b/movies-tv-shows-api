@@ -41,7 +41,7 @@ function Genres(props: any) {
     setGenresList,
   };
 
-  // prueba para recoger info de genres
+  // prueba con array de objetos para recoger info de genres
   const dataGenres: any = [
     { id: 28, name: "Action" },
     { id: 12, name: "Adventure" },

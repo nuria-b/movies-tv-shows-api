@@ -30,6 +30,7 @@ function MoviesDetails() {
   return (
     <section className="details-background">
       <p>Id: {oneMovie.id}</p>
+      <p className="detail-genres">Genre ids: {oneMovie.genre_ids}</p>
       <section className="detail-container">
         <div className="detail-subcontainer">
           <h1 className="detail-title">Title: {oneMovie.title}</h1>

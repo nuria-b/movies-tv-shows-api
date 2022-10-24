@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 // Crear context de related movies
-export const GenresContext = createContext(RelatedMovies);
+export const RelatedContext = createContext(RelatedMovies);
 
 function RelatedMovies() {
   const { id }: any = useParams();
@@ -35,7 +35,7 @@ function RelatedMovies() {
     setRelatedMovies,
   };
 
-  // prueba para recoger info de related movies
+  // prueba con array de objetos para recoger info de related movies
   const dataRelated: any = [
     {
       adult: false,
@@ -382,7 +382,7 @@ function RelatedMovies() {
   if (loading) return <section>Cargando...</section>;
 
   return (
-    <GenresContext.Provider value={value}>
+    <RelatedContext.Provider value={value}>
       <section className="related-container">
         <p className="related-title">Related movies: </p>
         {dataRelated.slice(0, 4).map((related: any, i: any) => (
@@ -392,7 +392,7 @@ function RelatedMovies() {
           </section>
         ))}
       </section>
-    </GenresContext.Provider>
+    </RelatedContext.Provider>
   );
 }
 export default RelatedMovies;
