@@ -10,6 +10,7 @@ function Genres() {
   const { id }: any = useParams();
   const [genresList, setGenresList]: any = useState([]);
   const [loading, setLoading]: any = useState(false);
+  let genresId = null;
 
   // Recoger los genres de la api v2
   useEffect(() => {
@@ -27,42 +28,25 @@ function Genres() {
       });
   }, []);
 
-  if (loading) return <section>Cargando...</section>;
+  if (loading) return <p>Cargando...</p>;
+
   const value: any = {
     genresList,
     setGenresList,
   };
 
-  // prueba con array de objetos para recoger info de genres
-  const dataGenres: any = [
-    { id: 28, name: "Action" },
-    { id: 12, name: "Adventure" },
-    { id: 16, name: "Animation" },
-    { id: 35, name: "Comedy" },
-    { id: 80, name: "Crime" },
-    { id: 99, name: "Documentary" },
-    { id: 18, name: "Drama" },
-    { id: 10751, name: "Family" },
-    { id: 14, name: "Fantasy" },
-    { id: 36, name: "History" },
-    { id: 27, name: "Horror" },
-    { id: 10402, name: "Music" },
-    { id: 9648, name: "Mystery" },
-    { id: 10749, name: "Romance" },
-    { id: 878, name: "Science Fiction" },
-    { id: 10770, name: "TV Movie" },
-    { id: 53, name: "Thriller" },
-    { id: 10752, name: "War" },
-    { id: 37, name: "Western" },
-  ];
+  // función para cambiar los id por los nombres
+  if (genresList.genre_ids === 28) {
+    genresId = <p>Action</p>;
+  } else {
+    genresId = <p></p>;
+}
 
   return (
     <GenresContext.Provider value={value}>
       <section className="detail-subcontainer">
         <p className="detail-info">Genres: </p>
-          <section className="genres-subcontainer">
-            <p className="detail-info">{genresList.genre_ids}</p>
-          </section>
+        {genresId}
       </section>
     </GenresContext.Provider>
   );
