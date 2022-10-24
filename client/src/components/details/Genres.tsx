@@ -37,16 +37,16 @@ function Genres() {
 
   // función para cambiar los id por los nombres
   if (genresList.genre_ids === 28) {
-    genresId = <p>Action</p>;
+    genresId = "Action";
   } else {
-    genresId = <p></p>;
+    genresId = "";
 }
 
   return (
     <GenresContext.Provider value={value}>
       <section className="detail-subcontainer">
         <p className="detail-info">Genres: </p>
-        {genresId}
+        <p>{genresId}</p>
       </section>
     </GenresContext.Provider>
   );
