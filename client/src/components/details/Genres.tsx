@@ -6,36 +6,28 @@ import axios from "axios";
 // Crear context de genres
 export const GenresContext = createContext(Genres);
 
-function Genres(props: any) {
+function Genres() {
+  const { id }: any = useParams();
   const [genresList, setGenresList]: any = useState([]);
   const [loading, setLoading]: any = useState(false);
 
   // Recoger los genres de la api v2
-  /*
-  const { genres=[] }:any = oneMovie;
-  
-  genres.forEach((genre:any) => {
-    if (genre.id === true) {
-      //return genre.name;
-      console.log(genre.name);
-    }
-  });
-  */
-
-  // Recoger los genres de la api v1
-  /*
-  const fetchGenresList = async (res: any) => {
-    const response = await fetch(
-      `https://api.themoviedb.org/3/genre/movie/list?api_key=${import.meta.env.VITE_API_KEY}&language=en-US`
-    );
-    const genres = await response.json();
-    setGenresList(genres.results); //mostrar los genres
-  };
-
   useEffect(() => {
-    fetchGenresList(genresList);
+    setLoading(true);
+    axios
+      .get(
+        `https://api.themoviedb.org/3/movie/popular?api_key=${
+          import.meta.env.VITE_API_KEY
+        }&language=en-US&page=1/movies/:id`
+      )
+      .then((res: any) => {
+        //console.log(res.data.results[id])
+        setGenresList(res.data.results[id]);
+        setLoading(false);
+      });
   }, []);
-  */
+
+  if (loading) return <section>Cargando...</section>;
   const value: any = {
     genresList,
     setGenresList,
@@ -68,11 +60,9 @@ function Genres(props: any) {
     <GenresContext.Provider value={value}>
       <section className="detail-subcontainer">
         <p className="detail-info">Genres: </p>
-        {dataGenres.slice(0, 4).map((genres: any, i: any) => (
-          <section key={i} className="genres-subcontainer">
-            <p className="detail-info">{genres.name}</p>
+          <section className="genres-subcontainer">
+            <p className="detail-info">{genresList.genre_ids}</p>
           </section>
-        ))}
       </section>
     </GenresContext.Provider>
   );
