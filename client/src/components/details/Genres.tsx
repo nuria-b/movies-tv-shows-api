@@ -40,7 +40,7 @@ function Genres() {
     genresList,
     setGenresList,
   };
-  //función para cambiar los id por los nombres v3 
+  //función para cambiar los id por los nombres v3
 
   // función para cambiar los id por los nombres v2
   // let genreName:any = "";
@@ -60,9 +60,6 @@ function Genres() {
   return (
     <GenresContext.Provider value={value}>
       <section className="detail-subcontainer">
-
-        {/* <p>Genres: {genresList.name}</p> */}
-
         <p className="detail-info">Genres: {genresList.genre_ids}</p>
 
         {/* <p className="detail-info">Genres: {genresList.genre_ids[0]}, {genresList.genre_ids[1]}, {genresList.genre_ids[2]}</p> */}
@@ -73,6 +70,12 @@ function Genres() {
         <p>{genresList.genre_ids[1]}</p>
         <p>{genresList.genre_ids[2]}</p>*/}
         {/*{genreName}*/}
+
+        {/* {genresList.map((genre: any, i: any) => (
+          <section className="films-card" key={i}>
+            <p className="detail-info">Genres: {genre.genre_ids}</p>
+          </section>
+        ))} */}
       </section>
     </GenresContext.Provider>
   );
