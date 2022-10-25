@@ -43,19 +43,19 @@ function Genres() {
   //función para cambiar los id por los nombres v3
 
   // función para cambiar los id por los nombres v2
-  // let genreName:any = "";
-  // if (genresList.genre_ids === 28) {
+  let genreName:any = "";
+  // if (genresList.genre_ids === 281214) {
   //   genreName = "Action, Adventure, Fantasy";
   // }
 
   // función para cambiar los id por los nombres v1
-  // if (genresList.genre_ids = 28) {
-  //   genreName = <p>Action</p>;
-  //  } else if(genresList.genre_ids = 12){
-  //    genreName = <p>Adventure</p>;
-  //  } else if(genresList.genre_ids = 14){
-  //    genreName = <p>Fantasy</p>;
-  // }
+  if (genresList.genre_ids === 28) {
+     genreName = <p>Action</p>;
+   } else if(genresList.genre_ids === 12){
+     genreName = <p>Adventure</p>;
+   } else if(genresList.genre_ids === 14){
+     genreName = <p>Fantasy</p>;
+  }
 
   return (
     <GenresContext.Provider value={value}>
@@ -69,7 +69,7 @@ function Genres() {
         {/*<p>{genresList.genre_ids[0]}</p>
         <p>{genresList.genre_ids[1]}</p>
         <p>{genresList.genre_ids[2]}</p>*/}
-        {/*{genreName}*/}
+        {genreName}
 
         {/* {genresList.map((genre: any, i: any) => (
           <section className="films-card" key={i}>
