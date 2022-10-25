@@ -41,15 +41,6 @@ function Genres() {
     setGenresList,
   };
   //función para cambiar los id por los nombres v3 
-  let genreName:any = "";
-  switch (genresList.genre_ids){
-    case 28:
-      genreName = "Action"
-    case 12:
-      genreName = "Adventure"
-    case 14:
-      genreName = "Fantasy"
-  }
 
   // función para cambiar los id por los nombres v2
   // let genreName:any = "";
@@ -73,7 +64,7 @@ function Genres() {
         {/* <p>Genres: {genresList.name}</p> */}
 
         <p className="detail-info">Genres: {genresList.genre_ids}</p>
-        <p>Genres: {genreName}</p>
+
         {/* <p className="detail-info">Genres: {genresList.genre_ids[0]}, {genresList.genre_ids[1]}, {genresList.genre_ids[2]}</p> */}
 
         {/* <p>Genres: {genreName}</p> */}
