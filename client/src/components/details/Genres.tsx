@@ -10,7 +10,7 @@ function Genres() {
   const { id }: any = useParams();
   const [genresList, setGenresList]: any = useState([]);
   const [loading, setLoading]: any = useState(false);
-  let genresId = null;
+  let genreName = "";
 
   // Recoger los genres de la api v2
   useEffect(() => {
@@ -37,16 +37,19 @@ function Genres() {
 
   // función para cambiar los id por los nombres
   if (genresList.genre_ids === 28) {
-    genresId = "Action";
+    let genreName = <p>Action</p>;
   } else {
-    genresId = "";
+    let genreName = <p></p>;
 }
 
   return (
     <GenresContext.Provider value={value}>
       <section className="detail-subcontainer">
         <p className="detail-info">Genres: </p>
-        <p>{genresId}</p>
+        <p>{genresList.genre_ids[0]}</p>
+        <p>{genresList.genre_ids[1]}</p>
+        <p>{genresList.genre_ids[2]}</p>
+        {genreName}
       </section>
     </GenresContext.Provider>
   );

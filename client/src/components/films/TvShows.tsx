@@ -31,7 +31,7 @@ function TvShows() {
   return  (
     <TvShowsContext.Provider value={value}>
       <section className="films-container" >
-      {TvShowsList.map((tv:any, i:any) => (
+      {TvShowsList/*.slice(0, 1)*/.map((tv:any, i:any) => (
         <section className="films-card" key={tv.id}>
             <Link to={`/tvshows/${i}`}>
               <img

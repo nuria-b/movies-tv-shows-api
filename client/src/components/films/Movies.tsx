@@ -7,7 +7,7 @@ export const MoviesContext = createContext(Movies);
 
 export default function Movies() {
   const [moviesList, setMoviesList] = useState([]);
-  
+
   // Recoger las movies de la api
   const fetchMoviesList = async (res: any) => {
     const response = await fetch(
@@ -31,7 +31,7 @@ export default function Movies() {
   return (
     <MoviesContext.Provider value={value}>
       <section className="films-container">
-        {moviesList.map((movie: any, i: any) => (
+        {moviesList/*.slice(0, 1)*/.map((movie: any, i: any) => (
           <section className="films-card" key={i}>
             <Link to={`/movies/${i}`}>
               <img
