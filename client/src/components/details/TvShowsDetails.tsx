@@ -48,7 +48,6 @@ function TvShowsDetails() {
       <p>Overview: {oneTv.overview}</p>
       <p>Vote average: {oneTv.vote_average}</p>
       <p>Vote count: {oneTv.vote_count}</p>
-      <p>Web: {oneTv.homepage}</p>
       <section>Related tv shows:</section>
     </section>
   );

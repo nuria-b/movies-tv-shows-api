@@ -30,7 +30,6 @@ function MoviesDetails() {
   return (
     <section className="details-background">
       <p>Id: {oneMovie.id}</p>
-      <p className="detail-genres">Genre ids: {oneMovie.genre_ids}</p>
       <section className="detail-container">
         <div className="detail-subcontainer">
           <h1 className="detail-title">Title: {oneMovie.title}</h1>
@@ -43,7 +42,6 @@ function MoviesDetails() {
         <Genres />
         <div className="detail-subcontainer">
           <p className="detail-info">Release date: {oneMovie.release_date}</p>
-          <p className="detail-info">Duration (mins): {oneMovie.runtime}</p>
           <p className="detail-info">Overview: {oneMovie.overview}</p>
           <p className="detail-info">Vote average: {oneMovie.vote_average}</p>
           <p className="detail-info">Vote count: {oneMovie.vote_count}</p>
