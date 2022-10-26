@@ -10,6 +10,7 @@ function MoviesDetails() {
   const [oneMovie, setOneMovie]: any = useState([id]);
   const [loading, setLoading]: any = useState(false);
 
+  // recoger los movies details de la api
   useEffect(() => {
     setLoading(true);
     axios
