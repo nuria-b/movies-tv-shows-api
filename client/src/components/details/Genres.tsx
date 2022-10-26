@@ -7,47 +7,22 @@ import oneMovie from "./MoviesDetails";
 // Crear context de genres
 export const GenresContext = createContext(Genres);
 
+// he pasado el props de movies details como parámetro a la función para que recoja la info de detalles de cada película por su id
 function Genres({movieId}: any) {
   const { id }: any = useParams();
   const [genresList, setGenresList]: any = useState([]);
 
-  // Recoger los genres de la api v3
+  // Recoger los nombre de los genres de la api
   useEffect(() => {
     axios
       .get(
         `https://api.themoviedb.org/3/genre/movie/list?api_key=${import.meta.env.VITE_API_KEY}&language=en-US`
       )
       .then((res: any) => {
-        // console.log(res.data)
-        setGenresList(res.data);
+        console.log(res.data)
+        //setGenresList(res.data);
       });
   }, []);
-
-  // Recoger los genres de la api v1
-  // useEffect(() => {
-  //   axios
-  //     .get(
-  //       `https://api.themoviedb.org/3/genre/movie/list?api_key=${import.meta.env.VITE_API_KEY}&language=en-US/`
-  //     )
-  //     .then((res: any) => {
-  //       //console.log(res.data.results[id])
-  //       setGenresList(res.data.results[id]);
-  //     });
-  // }, []);
-
-  // Recoger los genres de la api v2
-  // useEffect(() => {
-  //   axios
-  //     .get(
-  //       `https://api.themoviedb.org/3/movie/popular?api_key=${
-  //         import.meta.env.VITE_API_KEY
-  //       }&language=en-US&page=1/movies/:id`
-  //     )
-  //     .then((res: any) => {
-  //       //console.log(res.data.results[id])
-  //       setGenresList(res.data.results[id]);
-  //     });
-  // }, []);
 
   const value: any = {
     genresList,
