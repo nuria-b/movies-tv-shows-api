@@ -29,23 +29,24 @@ function MoviesDetails() {
   if (loading) return <section>Cargando...</section>;
 
   return (
-    <section className="details-background">
-      <p>Id: {oneMovie.id}</p>
+    <section className="detail-background">
       <section className="detail-container">
-        <div className="detail-subcontainer">
-          <h1 className="detail-title">Title: {oneMovie.title}</h1>
+        <div className="films-card">
           <img
             src={`https://image.tmdb.org/t/p/w500${oneMovie.backdrop_path}`}
             alt={oneMovie.title}
             className="detail-image"
           />
         </div>
+        <div  className="detail-subcontainer">
+        <h2 className="detail-title">{oneMovie.title}</h2>
         <Genres genreId={oneMovie.genre_ids} />
+        <p className="detail-info"><span className="title-info">Release date:</span> {oneMovie.release_date}</p>
+        </div>
         <div className="detail-subcontainer">
-          <p className="detail-info">Release date: {oneMovie.release_date}</p>
-          <p className="detail-info">Overview: {oneMovie.overview}</p>
-          <p className="detail-info">Vote average: {oneMovie.vote_average}</p>
-          <p className="detail-info">Vote count: {oneMovie.vote_count}</p>
+          <p className="detail-info"><span className="title-info">Overview: </span>{oneMovie.overview}</p>
+          <p className="detail-info"><span className="title-info">Vote average: </span>{oneMovie.vote_average}</p>
+          <p className="detail-info"><span className="title-info">Vote count: </span>{oneMovie.vote_count}</p>
         </div>
       </section>
       <RelatedMovies movieId={oneMovie.id} />

@@ -53,7 +53,7 @@ function Genres({genreId}: any) {
   return (
     <GenresContext.Provider value={value}>
       <section className="detail-subcontainer">
-         <p className="detail-info">Genres: {genreId}</p>
+         <p className="detail-info"><span  className="title-info">Genres: </span>{genreId}</p>
          {/* <p>{genreName}</p> */}
       </section>
     </GenresContext.Provider>

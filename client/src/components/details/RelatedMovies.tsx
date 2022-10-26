@@ -36,7 +36,7 @@ function RelatedMovies({movieId}: any) {
   return (
     <RelatedContext.Provider value={value}>
       <section className="related-container">
-        <p className="related-title">Related movies: </p>
+        <h2 className="related-title">Related movies: </h2>
         {relatedMovies.slice(0, 4).map((related: any, i: any) => (
           <section key={i} className="related-subcontainer">
             <p className="related-info">{related.title}</p>
