@@ -35,18 +35,29 @@ function MoviesDetails() {
           <img
             src={`https://image.tmdb.org/t/p/w500${oneMovie.backdrop_path}`}
             alt={oneMovie.title}
-            className="detail-image"
           />
         </div>
-        <div  className="detail-subcontainer">
-        <h2 className="detail-title">{oneMovie.title}</h2>
-        <Genres genreId={oneMovie.genre_ids} />
-        <p className="detail-info"><span className="title-info">Release date:</span> {oneMovie.release_date}</p>
+        <div className="detail-subcontainer">
+          <h2 className="detail-title">{oneMovie.title}</h2>
+          <Genres genreId={oneMovie.genre_ids} />
+          <p className="info-peq">
+            <span className="title-info">Release date:</span>{" "}
+            {oneMovie.release_date}
+          </p>
+          <p className="info-peq">
+            <span className="title-info">Vote average: </span>
+            {oneMovie.vote_average}
+          </p>
+          <p className="info-peq">
+            <span className="title-info">Vote count: </span>
+            {oneMovie.vote_count}
+          </p>
         </div>
         <div className="detail-subcontainer">
-          <p className="detail-info"><span className="title-info">Overview: </span>{oneMovie.overview}</p>
-          <p className="detail-info"><span className="title-info">Vote average: </span>{oneMovie.vote_average}</p>
-          <p className="detail-info"><span className="title-info">Vote count: </span>{oneMovie.vote_count}</p>
+          <p className="detail-info">
+            <span className="title-info">Overview: </span>
+            {oneMovie.overview}
+          </p>
         </div>
       </section>
       <RelatedMovies movieId={oneMovie.id} />
