@@ -385,7 +385,7 @@ function RelatedMovies() {
     <RelatedContext.Provider value={value}>
       <section className="related-container">
         <p className="related-title">Related movies: </p>
-        {dataRelated.slice(0, 4).map((related: any, i: any) => (
+        {relatedMovies.slice(0, 4).map((related: any, i: any) => (
           <section key={i} className="related-subcontainer">
             <p className="related-info">{related.title}</p>
             <img className="related-image"></img>

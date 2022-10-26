@@ -47,7 +47,7 @@ function MoviesDetails() {
           <p className="detail-info">Vote count: {oneMovie.vote_count}</p>
         </div>
       </section>
-      <RelatedMovies />
+      {/* <RelatedMovies /> */}
     </section>
   );
 }
