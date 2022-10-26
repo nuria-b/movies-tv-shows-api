@@ -53,7 +53,7 @@ function MoviesDetails() {
             {oneMovie.vote_count}
           </p>
         </div>
-        <div className="detail-subcontainer">
+        <div className="detail-subcontainer overview">
           <p className="detail-info">
             <span className="title-info">Overview: </span>
             {oneMovie.overview}

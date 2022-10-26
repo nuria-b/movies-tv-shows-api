@@ -3,12 +3,16 @@
     grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
     gap: 1rem;
     margin: 2rem;
-    background-color: green;
+    padding: 2rem;
+    background-color: white;
 }
 
-.detail-subcontainer{
-    background-color: red;
-}
+.detail-container > .films-card {
+    color: white;
+    border-radius: 5px;
+    position: relative;
+    height: 15rem;
+  }
 
 .detail-title{
     font-size: 30px;
@@ -22,3 +26,9 @@
 .info-peq{
     font-size: 14px;
 }
+
+@media (min-width: 1140px) {
+    .overview{
+        width: 500px;
+    }
+  }
