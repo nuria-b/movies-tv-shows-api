@@ -1,3 +1,7 @@
+nav{
+  margin-bottom: 4rem;
+}
+
 nav > ul {
     display: flex;
     flex-wrap: wrap;
