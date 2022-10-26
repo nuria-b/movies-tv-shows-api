@@ -11,20 +11,16 @@ function RelatedMovies({movieId}: any) {
   const [loading, setLoading]: any = useState(false);
   const [relatedMovies, setRelatedMovies]: any = useState([id]);
 
-  // https://api.themoviedb.org/3/movie/{movie_id}/similar?api_key=${import.meta.env.VITE_API_KEY}&language=en-US&page=1
-
-  // Recoger las movies relacionadas de la api v1 ---> falta cambiar 436270 por el id de la movie -> ${oneMovie.id} ??
-
+  // Coger los datos de related movies de la api
   useEffect(() => {
     setLoading(true);
     axios
       .get(
         `https://api.themoviedb.org/3/movie/${movieId}/similar?api_key=${
           import.meta.env.VITE_API_KEY
-        }&language=en-US&page=1/movies/:id` //coge la movie id de la app, no de la api
+        }&language=en-US&page=1/movies/:id` 
       )
       .then((res: any) => {
-        // console.log(res.data.results)
         setRelatedMovies(res.data.results);
         setLoading(false);
       });
