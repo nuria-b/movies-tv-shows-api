@@ -19,6 +19,20 @@
     height: 100%;
     object-fit: cover;
   }
+
+  .detail-title-film h2 {
+    bottom: 0;
+    top: 0;
+    left: 1rem;
+    font-size: 25px;
+    color: black;
+    text-shadow: 1px 1px GREY;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding: 2rem;
+    text-align: center;
+  }
   
   .detail-card h2 {
     position: absolute;

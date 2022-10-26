@@ -30,7 +30,12 @@ function MoviesDetails() {
 
   return (
     <section className="detail-background">
+      <section className="detail-title-film">
+      <h2 className="detail-title">{oneMovie.title}</h2>
+      </section>
+      
       <section className="detail-container">
+        
         <div className="detail-card">
           <img
             src={`https://image.tmdb.org/t/p/w500${oneMovie.backdrop_path}`}
@@ -38,7 +43,6 @@ function MoviesDetails() {
           />
         </div>
         <div className="detail-subcontainer">
-          <h2 className="detail-title">{oneMovie.title}</h2>
           <Genres genreId={oneMovie.genre_ids} />
           <p className="info-peq">
             <span className="title-info">Release date:</span>{" "}
