@@ -24,8 +24,8 @@ function RelatedMovies() {
         }&language=en-US&page=1`
       )
       .then((res: any) => {
-        //console.log(res.data.results[id])
-        setRelatedMovies(res.data.results[id]);
+        // console.log(res.data.results)
+        setRelatedMovies(res.data.results);
         setLoading(false);
       });
   }, []);
