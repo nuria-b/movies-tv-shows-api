@@ -33,6 +33,16 @@
     padding: 2rem;
     text-align: center;
   }
+
+  .detail-title-film h3 {
+    bottom: 0;
+    top: 0;
+    left: 1rem;
+    font-size: 18px;
+    margin-left: 4rem;
+    color: black;
+    text-align: left;
+  }
   
   .detail-card h2 {
     position: absolute;
@@ -71,4 +81,24 @@
     .overview{
         width: 500px;
     }
+  }
+
+  /* RELATED MOVIES */
+
+  .related-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+    gap: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    background-color: red;
+  }
+  
+  .related-container > .films-card {
+    color: white;
+    border-radius: 5px;
+    position: relative;
+    height: 10rem;
   }

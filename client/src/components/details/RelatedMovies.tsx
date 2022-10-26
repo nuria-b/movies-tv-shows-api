@@ -35,11 +35,13 @@ function RelatedMovies({movieId}: any) {
 
   return (
     <RelatedContext.Provider value={value}>
+      <section className="detail-title-film">
+      <h3 className="detail-title">Related movies</h3>
+      </section>
       <section className="related-container">
-        <h2 className="related-title">Related movies: </h2>
         {relatedMovies.slice(0, 4).map((related: any, i: any) => (
-          <section key={i} className="related-subcontainer">
-            <p className="related-info">{related.title}</p>
+          <section key={i} className="films-card">
+            <h2>{related.title}</h2>
             <img
             src={`https://image.tmdb.org/t/p/w500${related.backdrop_path}`}
             alt={related.title}
