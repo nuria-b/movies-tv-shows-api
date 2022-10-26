@@ -2,11 +2,12 @@ import "./style.css";
 import React, { useState, useEffect, createContext } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import oneMovie from "./MoviesDetails";
 
 // Crear context de genres
 export const GenresContext = createContext(Genres);
 
-function Genres() {
+function Genres({movieId}: any) {
   const { id }: any = useParams();
   const [genresList, setGenresList]: any = useState([]);
 
@@ -72,7 +73,9 @@ function Genres() {
   return (
     <GenresContext.Provider value={value}>
       <section className="detail-subcontainer">
-        <p className="detail-info">Genres: {genresList.genres[0].name}</p>
+         <p className="detail-info">Genres: {movieId}</p>
+
+        {/* <p className="detail-info">Genres: {genresList.genres[0].name}</p> */}
 
         {/* <p className="detail-info">Genres: {genresList.genre_ids[0]}, {genresList.genre_ids[1]}, {genresList.genre_ids[2]}</p> */}
 

@@ -39,7 +39,7 @@ function MoviesDetails() {
             className="detail-image"
           />
         </div>
-        <Genres />
+        <Genres movieId={oneMovie.genre_ids} />
         <div className="detail-subcontainer">
           <p className="detail-info">Release date: {oneMovie.release_date}</p>
           <p className="detail-info">Overview: {oneMovie.overview}</p>
