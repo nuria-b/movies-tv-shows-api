@@ -8,7 +8,7 @@ import oneMovie from "./MoviesDetails";
 export const GenresContext = createContext(Genres);
 
 // he pasado el props de movies details como parámetro a la función para que recoja la info de detalles de cada película por su id
-function Genres({movieId}: any) {
+function Genres({genreId}: any) {
   const { id }: any = useParams();
   const [genresList, setGenresList]: any = useState([id]);
 
@@ -32,28 +32,28 @@ function Genres({movieId}: any) {
   // función para cambiar los id por los nombres v2
   // let genreName:any = "";
     
-  // if (movieId = 28) {
+  // if (genreId = 28) {
   //   genreName = "Action";
-  // } else if(movieId = 12){
+  // } else if(genreId = 12){
   //   genreName = "Adventure";
-  // } else if(movieId = 14){
+  // } else if(genreId = 14){
   //   genreName = "Fantasy";
   // }
-  // console.log(movieId[0])
+  // console.log(genreId[0])
 
   // función para cambiar los id por los nombres v1
-  // if (movieId === 28) {
+  // if (genreId === 28) {
   //    genreName = <p>Action</p>;
-  //  } else if(movieId === 12){
+  //  } else if(genreId === 12){
   //    genreName = <p>Adventure</p>;
-  //  } else if(movieId === 14){
+  //  } else if(genreId === 14){
   //    genreName = <p>Fantasy</p>;
   // }
 
   return (
     <GenresContext.Provider value={value}>
       <section className="detail-subcontainer">
-         <p className="detail-info">Genres: {movieId}</p>
+         <p className="detail-info">Genres: {genreId}</p>
          {/* <p>{genreName}</p> */}
       </section>
     </GenresContext.Provider>

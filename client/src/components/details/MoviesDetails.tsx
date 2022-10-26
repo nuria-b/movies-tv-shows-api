@@ -40,7 +40,7 @@ function MoviesDetails() {
             className="detail-image"
           />
         </div>
-        <Genres movieId={oneMovie.genre_ids} />
+        <Genres genreId={oneMovie.genre_ids} />
         <div className="detail-subcontainer">
           <p className="detail-info">Release date: {oneMovie.release_date}</p>
           <p className="detail-info">Overview: {oneMovie.overview}</p>
@@ -48,7 +48,7 @@ function MoviesDetails() {
           <p className="detail-info">Vote count: {oneMovie.vote_count}</p>
         </div>
       </section>
-      <RelatedMovies movieId={oneMovie.genre_ids} />
+      <RelatedMovies movieId={oneMovie.id} />
     </section>
   );
 }

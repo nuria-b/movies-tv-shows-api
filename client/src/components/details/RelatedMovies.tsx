@@ -21,7 +21,7 @@ function RelatedMovies({movieId}: any) {
       .get(
         `https://api.themoviedb.org/3/movie/${movieId}/similar?api_key=${
           import.meta.env.VITE_API_KEY
-        }&language=en-US&page=1`
+        }&language=en-US&page=1/movies/:id` //coge la movie id de la app, no de la api
       )
       .then((res: any) => {
         // console.log(res.data.results)
