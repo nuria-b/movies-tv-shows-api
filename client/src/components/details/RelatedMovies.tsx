@@ -44,7 +44,11 @@ function RelatedMovies({movieId}: any) {
         {relatedMovies.slice(0, 4).map((related: any, i: any) => (
           <section key={i} className="related-subcontainer">
             <p className="related-info">{related.title}</p>
-            <img className="related-image"></img>
+            <img
+            src={`https://image.tmdb.org/t/p/w500${related.backdrop_path}`}
+            alt={related.title}
+            className="detail-image"
+          />
           </section>
         ))}
       </section>
