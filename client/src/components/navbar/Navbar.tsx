@@ -14,21 +14,30 @@ function Navbar() {
   //   setActiveTvShow(!activeTvShow);
   // };
 
+{/* <button onClick={handleClickMovies}
+        style={{ backgroundColor: activeMovie ? "black" : "white" }}>
+              <p className="menu-text">Movies</p>
+            </button>
+
+            <button onClick={handleClickTvShows}
+        style={{ backgroundColor: activeTvShow ? "black" : "white" }}>
+              <p className="menu-text">TV Shows</p>
+            </button> */}
+
+
   return (
     <nav>
       <ul>
         <li>
           <Link className="nav-active" to="/movies">
-            <button {/*onClick={handleClickMovies}
-        style={{ backgroundColor: activeMovie ? "black" : "white" }}*/}>
+            <button>
               <p className="menu-text">Movies</p>
             </button>
           </Link>
         </li>
         <li>
           <Link className="nav-active" to="/tvshows">
-            <button {/*onClick={handleClickTvShows}
-        style={{ backgroundColor: activeTvShow ? "black" : "white" }}*/}>
+            <button>
               <p className="menu-text">TV Shows</p>
             </button>
           </Link>
