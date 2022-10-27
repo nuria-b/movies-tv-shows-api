@@ -31,15 +31,15 @@ function MoviesDetails() {
   return (
     <section className="detail-background">
       <section className="detail-title-film">
-      <h2 className="detail-title">{oneMovie.title}</h2>
+        <h2 className="detail-title">{oneMovie.title}</h2>
       </section>
-      
+
       <section className="detail-container">
-        
         <div className="detail-card">
           <img
             src={`https://image.tmdb.org/t/p/w500${oneMovie.backdrop_path}`}
-            alt={oneMovie.title} className="detail-image"
+            alt={oneMovie.title}
+            className="detail-image"
           />
         </div>
         <div className="detail-subcontainer">

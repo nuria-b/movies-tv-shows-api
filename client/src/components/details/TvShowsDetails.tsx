@@ -26,28 +26,26 @@ function TvShowsDetails() {
   if (loading) return <section>Cargando...</section>;
 
   return (
-    <section className="FilmsDetails">
-      <h1>Title: {oneTv.name}</h1>
-      <img
-        src={`https://image.tmdb.org/t/p/w500${oneTv.backdrop_path}`}
-        alt={oneTv.title}
-      />
-      <p>
-        Genres:
-        {/*{oneTv.genres &&
-          oneTv.genres.slice(0, 5).map((genre:any, i:any) => (
-            <span key={i} className="genres__item">
-              {genre.name}
-            </span>
-          ))
-        }*/}
-      </p>
-      <p>First air date: {oneTv.first_air_date}</p>
-      <p>Number of episodes: {oneTv.number_of_episodes}</p>
-      <p>Number of seasons: {oneTv.number_of_seasons}</p>
-      <p>Overview: {oneTv.overview}</p>
-      <p>Vote average: {oneTv.vote_average}</p>
-      <p>Vote count: {oneTv.vote_count}</p>
+    <section className="detail-background">
+      <section className="detail-title-film">
+        <h2 className="detail-title">{oneTv.name}</h2>
+      </section>
+      <section  className="detail-container">
+        <div className="detail-card">
+          <img src={`https://image.tmdb.org/t/p/w500${oneTv.backdrop_path}`} alt={oneTv.title} />
+        </div>
+        <div className="detail-subcontainer">
+          <p>Genres: </p>
+          <p>First air date: {oneTv.first_air_date}</p>
+          <p>Number of episodes: {oneTv.number_of_episodes}</p>
+          <p>Number of seasons: {oneTv.number_of_seasons}</p>
+          <p>Vote average: {oneTv.vote_average}</p>
+          <p>Vote count: {oneTv.vote_count}</p>
+        </div>
+        <div className="detail-subcontainer overview">
+          <p>Overview: {oneTv.overview}</p>
+        </div>
+      </section>
       <section>Related tv shows:</section>
     </section>
   );
