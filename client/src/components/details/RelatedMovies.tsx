@@ -2,12 +2,12 @@ import "./style.css";
 import React, { useState, useEffect, createContext } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 
 // Crear context de related movies
 export const RelatedContext = createContext(RelatedMovies);
 
-function RelatedMovies({movieId}: any) {
+export default function RelatedMovies({movieId}: any) {
   const { id }: any = useParams();
   const [loading, setLoading]: any = useState(false);
   const [relatedMovies, setRelatedMovies]: any = useState([id]);
@@ -52,4 +52,3 @@ function RelatedMovies({movieId}: any) {
     </RelatedContext.Provider>
   );
 }
-export default RelatedMovies;
