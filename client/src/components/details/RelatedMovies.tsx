@@ -2,6 +2,7 @@ import "./style.css";
 import React, { useState, useEffect, createContext } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 // Crear context de related movies
 export const RelatedContext = createContext(RelatedMovies);
@@ -41,8 +42,10 @@ function RelatedMovies({movieId}: any) {
       <section className="related-container">
         {relatedMovies.slice(0, 4).map((related: any, i: any) => (
           <section key={i} className="related-card">
-            <h2>{related.title}</h2>
-            <img src={`https://image.tmdb.org/t/p/w500${related.backdrop_path}`} alt={related.title} className="detail-image"/>
+            {/*<Link to={`/movies/${movieId}`}>*/}
+              <h2>{related.title}</h2>
+              <img src={`https://image.tmdb.org/t/p/w500${related.backdrop_path}`} alt={related.title} className="detail-image"/>
+            {/*</Link>*/}
           </section>
         ))}
       </section>
