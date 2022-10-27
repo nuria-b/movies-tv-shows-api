@@ -2,6 +2,8 @@ import "./style.css";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import RelatedTvShows from "./RelatedTvShows";
+import Genres from "./Genres";
 
 function TvShowsDetails() {
   const { id }: any = useParams();
@@ -35,7 +37,7 @@ function TvShowsDetails() {
           <img src={`https://image.tmdb.org/t/p/w500${oneTv.backdrop_path}`} alt={oneTv.title} />
         </div>
         <div className="detail-subcontainer">
-          <p>Genres: </p>
+          <Genres genreId={oneTv.genre_ids} />
           <p>First air date: {oneTv.first_air_date}</p>
           <p>Number of episodes: {oneTv.number_of_episodes}</p>
           <p>Number of seasons: {oneTv.number_of_seasons}</p>
@@ -46,7 +48,9 @@ function TvShowsDetails() {
           <p>Overview: {oneTv.overview}</p>
         </div>
       </section>
-      <section>Related tv shows:</section>
+      <section>
+      <RelatedTvShows tvId={oneTv.id} />
+      </section>
     </section>
   );
 }
