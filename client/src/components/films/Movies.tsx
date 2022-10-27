@@ -34,11 +34,11 @@ export default function Movies() {
         {moviesList/*.slice(0, 1)*/.map((movie: any, i: any) => (
           <section className="films-card" key={i}>
             <Link to={`/movies/${i}`}>
+              <h2>{movie.title}</h2>
               <img
                 src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
                 alt={movie.title}
               />
-              <h2>{movie.title}</h2>
               <h3>Ranking: {movie.vote_average}</h3>
             </Link>
           </section>
