@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 /* Imagen de fondo estática */
-/*
+
 html{
   background: url("../../public/images/home-background.jpg") no-repeat center center fixed; 
   -webkit-background-size: cover;
@@ -11,7 +11,7 @@ html{
   -o-background-size: cover;
   background-size: cover;
 }
-*/
+
 
 body, html {
   height: 100%;

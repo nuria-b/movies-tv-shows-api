@@ -64,7 +64,10 @@ function MoviesDetails() {
           </p>
         </div>
       </section>
-      <RelatedMovies movieId={oneMovie.id} />
+      <section className="related-background">
+        <RelatedMovies movieId={oneMovie.id} />
+      </section>
+      
     </section>
   );
 }

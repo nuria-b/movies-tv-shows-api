@@ -32,15 +32,15 @@ function TvShowsDetails() {
       <section className="detail-title-film">
         <h2 className="detail-title">{oneTv.name}</h2>
       </section>
-      <section  className="detail-container">
+      <section className="detail-container">
         <div className="detail-card">
           <img src={`https://image.tmdb.org/t/p/w500${oneTv.backdrop_path}`} alt={oneTv.name} />
         </div>
         <div className="detail-subcontainer">
           <Genres genreId={oneTv.genre_ids} />
           <p className="info-peq"><span className="title-info">First air date: </span>{oneTv.first_air_date}</p>
-          <p className="info-peq"><span className="title-info">Number of episodes: </span>{oneTv.number_of_episodes}</p>
-          <p className="info-peq"><span className="title-info">Number of seasons: </span>{oneTv.number_of_seasons}</p>
+          {/* <p className="info-peq"><span className="title-info">Number of episodes: </span>{oneTv.number_of_episodes}</p>
+          <p className="info-peq"><span className="title-info">Number of seasons: </span>{oneTv.number_of_seasons}</p> */}
           <p className="info-peq"><span className="title-info">Vote average: </span>{oneTv.vote_average}</p>
           <p className="info-peq"><span className="title-info">Vote count: </span> {oneTv.vote_count}</p>
         </div>
@@ -48,8 +48,8 @@ function TvShowsDetails() {
           <p><span className="title-info">Overview:</span> {oneTv.overview}</p>
         </div>
       </section>
-      <section>
-      <RelatedTvShows tvId={oneTv.id} />
+      <section className="related-background">
+        <RelatedTvShows tvId={oneTv.id} />
       </section>
     </section>
   );
