@@ -5,14 +5,14 @@ import "./style.css";
 function Header() {
 
   return  (
-    <div className="Header">
-        <header>
+    <header>
+        <div className="header">
           <Link to="/">
-            <h1>The most populars Movies and TV Shows</h1>
+            <h1>Movies & TV Shows</h1>
           </Link>
-        </header>
+        </div>
         <Navbar />
-    </div>
+    </header>
   );
 }
 
