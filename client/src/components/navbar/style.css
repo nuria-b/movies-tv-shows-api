@@ -45,3 +45,12 @@ nav > ul {
   button:hover{
     background-color: black;
   }
+
+  .active {
+    background-color: black !important;
+    color: white;
+  }
+
+  .active p {
+    color: white;
+  }
