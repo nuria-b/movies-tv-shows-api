@@ -28,7 +28,7 @@ function TvShowsDetails() {
   if (loading) return <section>Cargando...</section>;
 
   return (
-    <section className="detail-background">
+    <section>
       <section className="detail-title-film">
         <h2 className="detail-title">{oneTv.name}</h2>
       </section>

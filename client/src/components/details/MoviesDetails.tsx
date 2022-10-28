@@ -29,7 +29,7 @@ function MoviesDetails() {
   if (loading) return <section>Cargando...</section>;
 
   return (
-    <section className="detail-background">
+    <section>
       <section className="detail-title-film">
         <h2 className="detail-title">{oneMovie.title}</h2>
       </section>
