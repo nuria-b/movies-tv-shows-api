@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import React, { useState } from "react";
+//import React, { useState } from "react";
 import "./style.css";
 
 export default function Navbar() {
   // Recoger todos los botones
-  let Buttons = document.querySelectorAll(".selectSection button");
+  // let Buttons = document.querySelectorAll(".selectSection button");
 
   // for (let button of Buttons) {
   //   // Activar la escucha para un evento de click
