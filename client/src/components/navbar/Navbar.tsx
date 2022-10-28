@@ -1,8 +1,16 @@
 import { Link } from "react-router-dom";
-//import React, { useState } from "react";
+import React, { useState } from "react";
 import "./style.css";
 
 export default function Navbar() {
+
+  const [changeColor, setChangeColor]:any =useState(false)
+
+    // Función de cambiar el color de fondo del botón al hacer click
+    const handleClick:any = () => {
+        setChangeColor(!changeColor)
+    }
+
   // Recoger todos los botones
   // let Buttons = document.querySelectorAll(".selectSection button");
 
@@ -41,19 +49,19 @@ export default function Navbar() {
   // }
 
   return (
-    <nav>
+    <nav id="navbar">
       <ul className="selectSection">
         <li>
           <Link to="/movies">
-            <button className="active">
+            <button onClick={handleClick} className={`menu-button ${(changeColor === true)? '' : ' active'}`}>
               <p className="menu-text">Movies</p>
             </button>
           </Link>
         </li>
         <li>
           <Link to="/tvshows">
-            <button>
-              <p className="menu-text">TV Shows</p>
+          <button onClick={handleClick} className={`menu-button ${(changeColor === true)? ' active' : ''}`}>
+              <p className="menu-text">Movies</p>
             </button>
           </Link>
         </li>
