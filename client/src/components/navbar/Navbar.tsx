@@ -61,7 +61,7 @@ export default function Navbar() {
         <li>
           <Link to="/tvshows">
           <button onClick={handleClick} className={`menu-button ${(changeColor === true)? ' active' : ''}`}>
-              <p className="menu-text">Movies</p>
+              <p className="menu-text">TV Shows</p>
             </button>
           </Link>
         </li>
