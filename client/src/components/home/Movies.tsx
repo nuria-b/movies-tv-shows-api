@@ -7,6 +7,7 @@ export const MoviesContext = createContext(Movies);
 
 export default function Movies() {
   const [moviesList, setMoviesList] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
   
   // Recoger las movies de la api
   const fetchMoviesList = async (res: any) => {
@@ -27,6 +28,8 @@ export default function Movies() {
     moviesList,
     setMoviesList,
   };
+
+  // Estilo para el contenedor del slider
 
   return (
     <MoviesContext.Provider value={value}>
