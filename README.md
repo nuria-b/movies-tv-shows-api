@@ -21,7 +21,7 @@
 <p> Requisito imprescindible: tener instalado Node js </p>
     <ul>
         <li>Clonamos el repositorio:</li>
-            <p>git clone https://github.com/nuria-b/movies-tv-shows</p> 
+            <p>git clone https://github.com/nuria-b/movies-tv-shows-api</p> 
         <li>Instalamos Node Package Manager abriendo la terminal en "client": </li> 
              <p>npm install / npm i</p>
         <li>Vizualizamos el proyecto en "client" y lo ejecutaremos con:</li> 
