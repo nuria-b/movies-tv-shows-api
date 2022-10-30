@@ -3,13 +3,12 @@ import React, { useState } from "react";
 import "./style.css";
 
 export default function Navbar() {
+  const [changeColor, setChangeColor]: any = useState(false);
 
-  const [changeColor, setChangeColor]:any =useState(false)
-
-    // Función de cambiar el color de fondo del botón al hacer click
-    const handleClick:any = () => {
-        setChangeColor(!changeColor)
-    }
+  // Función de cambiar el color de fondo del botón al hacer click
+  const handleClick: any = () => {
+    setChangeColor(!changeColor);
+  };
 
   // Recoger todos los botones
   // let Buttons = document.querySelectorAll(".selectSection button");
@@ -21,7 +20,7 @@ export default function Navbar() {
   //     const et: any = e.target;
   //     // Seleccionar la clase activa
   //     const active: any = document.querySelector(".active");
-  //     // Verificar el botón que tiene una clase activa   
+  //     // Verificar el botón que tiene una clase activa
   //     if (active) {
   //       active.classList.remove("active");
   //     }
@@ -53,14 +52,20 @@ export default function Navbar() {
       <ul className="selectSection">
         <li>
           <Link to="/movies">
-            <button onClick={handleClick} className={`menu-button ${(changeColor === true)? '' : ' active'}`}>
+            <button
+              onClick={handleClick}
+              className={`menu-button ${changeColor === true ? "" : " active"}`}
+            >
               <p className="menu-text">Movies</p>
             </button>
           </Link>
         </li>
         <li>
           <Link to="/tvshows">
-          <button onClick={handleClick} className={`menu-button ${(changeColor === true)? ' active' : ''}`}>
+            <button
+              onClick={handleClick}
+              className={`menu-button ${changeColor === true ? " active" : ""}`}
+            >
               <p className="menu-text">TV Shows</p>
             </button>
           </Link>

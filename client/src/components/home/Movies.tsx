@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 export const MoviesContext = createContext(Movies);
 
 export default function Movies({ movieId }: any) {
-  const [moviesList, setMoviesList]:any = useState([]);
+  const [moviesList, setMoviesList]: any = useState([]);
   // const [currentIndex, setCurrentIndex]:any = useState(0);
-  
+
   // Recoger las movies de la api
   const fetchMoviesList = async (res: any) => {
     const response = await fetch(
@@ -24,7 +24,7 @@ export default function Movies({ movieId }: any) {
   useEffect(() => {
     fetchMoviesList(Movies);
   }, []);
-  
+
   const value: any = {
     moviesList,
     setMoviesList,
@@ -77,7 +77,6 @@ export default function Movies({ movieId }: any) {
   return (
     <MoviesContext.Provider value={value}>
       <section>
-
         {/* <section>
           <div onClick={goToPrevious} className="left-arrow">
             ❰
@@ -102,8 +101,7 @@ export default function Movies({ movieId }: any) {
             </section>
           ))}
         </section>
-
-      </section>      
+      </section>
     </MoviesContext.Provider>
   );
 }

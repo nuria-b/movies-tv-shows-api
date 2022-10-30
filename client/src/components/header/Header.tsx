@@ -3,15 +3,14 @@ import { Link } from "react-router-dom";
 import "./style.css";
 
 function Header() {
-
-  return  (
+  return (
     <header>
-        <div className="header">
-          <Link to="/">
-            <h1>Movies & TV Shows</h1>
-          </Link>
-        </div>
-        <Navbar />
+      <div className="header">
+        <Link to="/">
+          <h1>Movies & TV Shows</h1>
+        </Link>
+      </div>
+      <Navbar />
     </header>
   );
 }

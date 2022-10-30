@@ -3,6 +3,9 @@
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   gap: 1rem;
   margin-top: 2rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
+  margin-bottom: 4rem;
   /* width: 500px;
   height: 280px;
   margin: 0 auto; */
@@ -53,7 +56,7 @@
 
 /* Arrows */
 
-.left-arrow{
+.left-arrow {
   position: absolute;
   top: 380px;
   transform: translate(0, -50%);
@@ -64,7 +67,7 @@
   cursor: pointer;
 }
 
-.right-arrow{
+.right-arrow {
   position: absolute;
   top: 380px;
   transform: translate(0, -50%);
@@ -75,7 +78,7 @@
   cursor: pointer;
 }
 
-.slide-styles{
+.slide-styles {
   width: 100%;
   height: 100%;
   border-radius: 10px;

@@ -67,7 +67,6 @@ function MoviesDetails() {
       <section className="related-background">
         <RelatedMovies movieId={oneMovie.id} />
       </section>
-      
     </section>
   );
 }
