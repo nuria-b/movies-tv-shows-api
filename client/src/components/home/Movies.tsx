@@ -18,6 +18,7 @@ export default function Movies() {
     );
     const movies = await response.json();
     setMoviesList(movies.results); //mostrar las movies
+    console.log(movies.results[0].backdrop_path);
   };
 
   useEffect(() => {
@@ -29,10 +30,12 @@ export default function Movies() {
     setMoviesList,
   };
 
+  // Recoger las imágenes
+
   // Ir atrás o adelante en el slider
   const goToPrevious = () => {
     const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? moviesList.length - 1 : currentIndex - 1;
+    const newIndex = isFirstSlide ? moviesList.results[0].length - 1 : currentIndex - 1;
     console.log(newIndex)
     setCurrentIndex(newIndex);
   };
