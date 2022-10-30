@@ -29,24 +29,35 @@ export default function Movies() {
     setMoviesList,
   };
 
-  // Estilo para el contenedor del slider
-
   return (
     <MoviesContext.Provider value={value}>
-      <section className="films-container">
-        {moviesList.map((movie: any, i: any) => (
-          <section className="films-card" key={i}>
-            <Link to={`/movies/${i}`}>
-              <img
-                src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
-                alt={movie.title}
-              />
-              <h2>{movie.title}</h2>
-              <h3>Ranking: {movie.vote_average}</h3>
-            </Link>
-          </section>
-        ))}
-      </section>
+      <section>
+
+        <section>
+          <div>
+            ❰
+          </div>
+          <div>
+            ❱
+          </div>
+        </section>
+
+        <section className="films-container">
+          {moviesList.map((movie: any, i: any) => (
+            <section className="films-card" key={i}>
+              <Link to={`/movies/${i}`}>
+                <img
+                  src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+                  alt={movie.title}
+                />
+                <h2>{movie.title}</h2>
+                <h3>Ranking: {movie.vote_average}</h3>
+              </Link>
+            </section>
+          ))}
+        </section>
+
+      </section>      
     </MoviesContext.Provider>
   );
 }
