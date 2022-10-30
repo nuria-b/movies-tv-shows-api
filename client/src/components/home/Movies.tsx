@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 export const MoviesContext = createContext(Movies);
 
 export default function Movies() {
-  const [moviesList, setMoviesList] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [moviesList, setMoviesList]:any = useState([]);
+  const [currentIndex, setCurrentIndex]:any = useState(0);
   
   // Recoger las movies de la api
   const fetchMoviesList = async (res: any) => {
@@ -29,13 +29,32 @@ export default function Movies() {
     setMoviesList,
   };
 
+  // Ir atrás o adelante en el slider
+  const goToPrevious = () => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? moviesList.length - 1 : currentIndex - 1;
+    console.log(newIndex)
+    setCurrentIndex(newIndex);
+  };
+  const goToNext = () => {
+    const isLastSlide = currentIndex === moviesList.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    console.log(newIndex)
+    setCurrentIndex(newIndex);
+  };
+  
+
   return (
     <MoviesContext.Provider value={value}>
       <section>
 
         <section>
-          <div className="left-arrow">❰</div>
-          <div className="right-arrow">❱</div>
+          <div onClick={goToPrevious} className="left-arrow">
+            ❰
+          </div>
+          <div onClick={goToNext} className="right-arrow">
+            ❱
+          </div>
         </section>
 
         <section className="films-container">
