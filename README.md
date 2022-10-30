@@ -8,10 +8,8 @@
 
 <ul>
     <li>React</li>
-    <li>Nodejs</li>
-    <li>Material UI</li>
-    <li>Styled Components</li>
     <li>TypeScript</li>
+    <li>Nodejs</li>
     <li>NPM</li>
     <li>Api: https://www.themoviedb.org</li>
     
