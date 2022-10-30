@@ -35,7 +35,7 @@ export default function Movies() {
   // Ir atrás o adelante en el slider
   const goToPrevious = () => {
     const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? moviesList.results[0].length - 1 : currentIndex - 1;
+    const newIndex = isFirstSlide ? moviesList.length - 1 : currentIndex - 1;
     console.log(newIndex)
     setCurrentIndex(newIndex);
   };
