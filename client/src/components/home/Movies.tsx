@@ -34,12 +34,8 @@ export default function Movies() {
       <section>
 
         <section>
-          <div className="left-arrow">
-            ❰
-          </div>
-          <div className="right-arrow">
-            ❱
-          </div>
+          <div className="left-arrow">❰</div>
+          <div className="right-arrow">❱</div>
         </section>
 
         <section className="films-container">
