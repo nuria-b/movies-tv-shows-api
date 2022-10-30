@@ -1,10 +1,10 @@
 h1 {
   margin-top: 4rem;
   margin-bottom: 2rem;
-  color: white;
+  color: white !important;
   margin-left: 2rem;
   margin-right: 2rem;
-  margin-top: 4rem;
+  margin-top: 4rem !important;
   text-align: center;
   padding-top: 1rem;
   padding-bottom: 1rem;
