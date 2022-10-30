@@ -34,10 +34,10 @@ export default function Movies() {
       <section>
 
         <section>
-          <div>
+          <div className="left-arrow">
             ❰
           </div>
-          <div>
+          <div className="right-arrow">
             ❱
           </div>
         </section>
