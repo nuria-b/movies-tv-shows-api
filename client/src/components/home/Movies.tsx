@@ -1,6 +1,7 @@
 import "./style.css";
 import { useEffect, createContext, useState } from "react";
 import { Link } from "react-router-dom";
+import ButtonSlider from "./ButtonSlider/ButtonSlider";
 
 // Crear context de Movies
 export const MoviesContext = createContext(Movies);
@@ -42,6 +43,8 @@ export default function Movies() {
                 />
                 <h3>Ranking: {movie.vote_average}</h3>
               </Link>
+              <ButtonSlider />
+              <ButtonSlider />
             </section>
           ))}
       </section>
