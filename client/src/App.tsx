@@ -9,6 +9,8 @@ import TvShowsDetails from "./components/details/TvShowsDetails";
 import { Routes, Route, Navigate } from "react-router-dom";
 import InnerContent from "./components/InnerContent";
 
+console.log("Prueba con rama principal-task GitHub Desktop")
+
 export default function App() {
   return (
     <div className="App">
